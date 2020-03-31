@@ -1,0 +1,59 @@
+<?php
+
+class Animal{
+    
+    public $nome;
+    public $idade;
+    
+    public function emitirSom($som){
+        echo '<br>'. $som;
+    }
+
+    public function efetuarAcao($acao){
+        echo '<br>'. $acao .'<br>'. '<br>';
+    }
+
+    public function setNome($nome){
+        $this->nome=$nome;
+    }
+
+    public function setIdade($idade){
+        $this->idade=$idade;
+    }
+
+    public function getNome(){
+        return $this->nome;
+    }
+
+    public function getIdade(){
+        return $this->idade;
+    }
+}
+
+$cachorro = new Animal;
+$cachorro->setNome("Totó");
+$cachorro->setIdade("3 anos");
+echo $cachorro->getNome();
+echo '<br>'. $cachorro->getIdade();
+$cachorro->emitirSom("Som de cachorro...");
+$cachorro->efetuarAcao("Correr...");
+
+
+$cavalo = new Animal;
+$cavalo->setNome("Sansão");
+$cavalo->setIdade("10 anos");
+echo $cavalo->getNome();
+echo '<br>'. $cavalo->getIdade();
+$cavalo->emitirSom("Som de cavalo...");
+$cavalo->efetuarAcao("Correr...");
+
+
+$preguica = new Animal;
+$preguica->setNome("Soneta");
+$preguica->setIdade("4 meses");
+echo $preguica->getNome();
+echo '<br>'. $preguica->getIdade();
+$preguica->emitirSom("Som de preguiça...");
+$preguica->efetuarAcao("Subir em árvores...")
+
+?>
