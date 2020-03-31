@@ -1,0 +1,100 @@
+<?php
+
+class Animal{
+    
+    public $nome;
+    public $idade;
+    public $som;
+    public $acao;
+    
+
+    public function setNome($nome){
+        $this->nome=$nome;
+    }
+
+    public function setIdade($idade){
+        $this->idade=$idade;
+    }
+
+    public function setEmitirSom($som){
+        $this->som=$som;
+    }
+
+    public function setEfetuarAcao($acao){
+        $this->acao=$acao;
+    }
+
+    public function getNome(){
+        return $this->nome;
+    }
+
+    public function getIdade(){
+        return $this->idade;
+    }
+
+    public function getEmitirSom(){
+        return $this->som;
+    }
+
+    public function getEfetuarAcao(){
+        return $this->acao;
+    }
+}
+
+
+class Veterinario{
+    
+    public function examinar($cachorro){
+        echo '<br>'.'<br>'."Examinando...";
+        echo '<br>'. $cachorro->getNome();
+        echo '<br>' .$cachorro->getEmitirSom();
+    }
+}
+
+
+$cachorro = new Animal;
+$cachorro->setNome("Totó");
+$cachorro->setIdade("3 anos");
+$cachorro->setEmitirSom("Som de cachorro...");
+$cachorro->setEfetuarAcao("Correr...");
+
+echo '<br>'. $cachorro->getNome();
+echo '<br>'. $cachorro->getIdade();
+echo '<br>'. $cachorro->getEmitirSom();
+echo '<br>'. $cachorro->getEfetuarAcao();
+
+$exame= new Veterinario;
+echo '<br>'.'<br>'. $exame->examinar($cachorro);
+
+
+$cavalo = new Animal;
+$cavalo->setNome("Sansão");
+$cavalo->setIdade("10 anos");
+$cavalo->setEmitirSom("Som de cavalo...");
+$cavalo->setEfetuarAcao("Correr...");
+
+echo '<br>'.'<br>'. $cavalo->getNome();
+echo '<br>'. $cavalo->getIdade();
+echo '<br>'. $cavalo->getEmitirSom();
+echo '<br>'. $cavalo->getEfetuarAcao();
+
+$exame= new Veterinario;
+echo '<br>'.'<br>'. $exame->examinar($cavalo);
+
+
+$preguica = new Animal;
+$preguica->setNome("Soneta");
+$preguica->setIdade("4 meses");
+$preguica->setEmitirSom("Som de preguiça...");
+$preguica->setEfetuarAcao("Subir em árvores...");
+
+echo '<br>'. '<br>'.$preguica->getNome();
+echo '<br>'. $preguica->getIdade();
+echo '<br>'. $preguica->getEmitirSom();
+echo '<br>'. $preguica->getEfetuarAcao();
+
+$exame= new Veterinario;
+echo '<br>'.'<br>'. $exame->examinar($preguica);
+
+
+?>
