@@ -1,0 +1,60 @@
+<?php
+
+class Imovel{
+    
+    public $endereco;
+    public $preco;
+
+    public function setEndereco($endereco){
+        $this->endereco=$endereco;
+    }
+
+    public function setPreco($preco){
+        $this->preco=$preco;
+    }
+
+    public function getEndereco(){
+        return $this->endereco;
+    }
+}
+
+class Novo extends Imovel{
+    public $adicional;
+        
+    public function adicional(){
+        $this->adicional=10.522;
+        return $this->adicional;
+    }
+
+    public function getPrecoNovo(){
+        return $this->preco+$this->adicional;
+    }
+}
+
+class  Velho extends Imovel{
+    public $desconto;
+
+    public function desconto(){
+        $this->desconto=5.261;
+        return $this->desconto;
+    }
+
+    public function getPrecoVelho(){
+        return $this->preco-$this->desconto;
+    }
+}
+
+
+$casa= new Novo;
+$casa->setEndereco("Rua Taltal, 666");
+$casa->setPreco("35.955");
+echo "Casa nova na ".$casa->getEndereco();
+echo '<br> Possui o adicional de $'. $casa->adicional(). " ficando por $". $casa->getPrecoNovo();
+
+
+$predio =new Velho;
+$predio->setEndereco("Rua Blablabla, 123");
+$predio->setPreco("500.258");
+echo '<br>'.'<br>'."Predio velho na ". $predio->getEndereco();
+echo '<br> Possui o desconto de $'. $predio->desconto(). " ficando por $". $predio->getPrecoVelho();
+?>
