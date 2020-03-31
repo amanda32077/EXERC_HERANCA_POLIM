@@ -1,0 +1,152 @@
+<?php
+
+class Veiculo{
+    public $modelo;
+    public $velocidade;
+    public $passageiros;
+    public $combustivel;
+
+    public function setModelo($modelo){
+        $this->modelo=$modelo;
+    }
+
+    public function setVelocidade($velocidade){
+        $this->velocidade=$velocidade;
+    }
+    
+    public function setPassageiros($passageiros){
+        $this->passageiros=$passageiros;
+    }
+    
+    public function setCombustivel($combustivel){
+        $this->combustivel=$combustivel;
+    }
+
+    public function getModelo(){
+        return $this->modelo;
+    }
+    
+    public function getVelociade(){
+        return $this->velocidade;
+    }
+    
+    public function getPassageiros(){
+        return $this->passageiros;
+    }
+
+    public function getCombustivel(){
+        return $this->combustivel;
+    }
+
+}
+
+
+class Carro extends Veiculo{
+    
+    public $portas;
+    public $ano;
+
+    public function setPortas($portas){
+        $this->portas=$portas;
+    }
+
+    public function setAno($ano){
+        $this->ano=$ano;
+    }
+
+    public function getPortas(){
+        return $this->portas;
+    }
+
+    public function getAno(){
+        return $this->ano;
+    }
+}
+
+
+class Aviao extends Veiculo{
+    public $uso;
+    public $tipo;
+
+    public function setUso($uso){
+        $this->uso=$uso;
+    }
+
+    public function setTipo($tipo){
+        $this->tipo=$tipo;
+    }
+
+    public function getUso(){
+        return $this->uso;
+    }
+
+    public function getTipo(){
+        return $this->tipo;
+    }
+}
+
+$jeep= new Carro;
+$jeep->setModelo("Jeep");
+$jeep->setVelocidade("120Km/h");
+$jeep->setPassageiros("5");
+$jeep->setCombustivel("Diesel");
+$jeep->setPortas("2");
+$jeep->setAno("2010");
+
+echo '<br>'. $jeep->getModelo();
+echo '<br>'. $jeep->getVelociade();
+echo '<br>'. $jeep->getPassageiros();
+echo '<br>'. $jeep->getCombustivel();
+echo '<br>'. $jeep->getPortas();
+echo '<br>'. $jeep->getAno();
+
+
+$brasilia= new Carro;
+$brasilia->setModelo("Brasilia");
+$brasilia->setVelocidade("80Km/h");
+$brasilia->setPassageiros("2");
+$brasilia->setCombustivel("Gasolina");
+$brasilia->setPortas("2");
+$brasilia->setAno("1998");
+
+echo '<br>'. '<br>'. $brasilia->getModelo();
+echo '<br>'. $brasilia->getVelociade();
+echo '<br>'. $brasilia->getPassageiros();
+echo '<br>'. $brasilia->getCombustivel();
+echo '<br>'. $brasilia->getPortas();
+echo '<br>'. $brasilia->getAno();
+
+
+$agricula=new Aviao;
+$agricula->setModelo("Agricula Simples");
+$agricula->setVelocidade("100Km/h");
+$agricula->setPassageiros("1");
+$agricula->setCombustivel("Querosene");
+$agricula->setUso("Privado");
+$agricula->setTipo("Detetizante");
+
+echo '<br>'.'<br>'.  $agricula->getModelo();
+echo '<br>'. $agricula->getVelociade();
+echo '<br>'. $agricula->getPassageiros();
+echo '<br>'. $agricula->getCombustivel();
+echo '<br>'. $agricula->getUso();
+echo '<br>'. $agricula->getTipo();
+
+
+$comercial=new Aviao;
+$comercial->setModelo("Comercial Simples");
+$comercial->setVelocidade("300Km/h");
+$comercial->setPassageiros("60");
+$comercial->setCombustivel("Querosene");
+$comercial->setUso("Publico");
+$comercial->setTipo("Viagens Internacionais");
+
+echo '<br>'. '<br>'. $comercial->getModelo();
+echo '<br>'. $comercial->getVelociade();
+echo '<br>'. $comercial->getPassageiros();
+echo '<br>'. $comercial->getCombustivel();
+echo '<br>'. $comercial->getUso();
+echo '<br>'. $comercial->getTipo();
+
+
+?>
